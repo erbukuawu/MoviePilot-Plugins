@@ -1,4 +1,18 @@
-{
+{      
+  "CnlangSignin": {
+    "name": "国语视界论坛签到",
+    "description": "国语视界论坛自动签到，支持随机延迟",
+    "version": "1.2",
+    "icon": "https://raw.githubusercontent.com/imaliang/MoviePilot-Plugins/main/icons/cnlang.png",
+    "author": "imaliang",
+    "level": 1,
+    "v2": true,
+    "history": {
+      "v1.2": "支持mp-v2",
+      "v1.1": "消息发送，去除链接。",
+      "v1.0": "支持国语视界论坛自动签到。"
+    }
+  },
       "HistoryClear": {
         "name": "历史记录清理",
         "description": "一键清理历史记录",
