@@ -15,8 +15,7 @@
   },
       "HistoryClear": {
         "name": "历史记录清理",
-        "description": "一键清理历史记录。",
-        "labels": "工具",
+        "description": "一键清理历史记录",
         "version": "1.1",
         "icon": "https://raw.githubusercontent.com/InfinityPacer/MoviePilot-Plugins/main/icons/historyclear.png",
         "author": "InfinityPacer",
