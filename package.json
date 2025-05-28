@@ -1,15 +1,15 @@
 {
-"FFmpegStrmThumb": {
-    "name": "FFmpegStrm缩略图",
-    "description": "TheMovieDb没有背景图片时使用FFmpeg截取strm视频文件缩略图。",
-    "version": "1.2",
-    "icon": "https://raw.githubusercontent.com/imaliang/MoviePilot-Plugins/main/icons/ffmpegstrm.png",
-    "author": "imaliang",
+"HistoryClear": {
+    "name": "历史记录清理",
+    "description": "支持手动或定时清理历史记录",
+    "version": "1.1",
+    "icon": "https://raw.githubusercontent.com/InfinityPacer/MoviePilot-Plugins/main/icons/historyclear.png",
+    "author": "InfinityPacer",
     "level": 1,
     "v2": true,
     "history": {
-      "v1.2": "支持mp-v2",
-      "v1.0": "TheMovieDb没有背景图片时使用FFmpeg截取strm视频文件缩略图。"
+      "v1.1": "增加定时执行任务",
+      "v1.0": "自定义执行周期执行命令并推送结果"
     }
   }
 }
