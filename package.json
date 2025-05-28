@@ -13,6 +13,19 @@
       "v1.0": "支持国语视界论坛自动签到。"
     }
   },
+      "HistoryClear": {
+        "name": "历史记录清理",
+        "description": "一键清理历史记录。",
+        "labels": "工具",
+        "version": "1.1",
+        "icon": "https://raw.githubusercontent.com/InfinityPacer/MoviePilot-Plugins/main/icons/historyclear.png",
+        "author": "InfinityPacer",
+        "level": 1,
+        "v2": true,
+        "history": {
+            "v1.0": "增加历史记录清理插件，实现一键清理历史记录"
+        }
+    },
   "SSDForumSignin": {
     "name": "SSDForum论坛签到",
     "description": "SSDForum自动签到，支持随机延迟",
