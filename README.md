@@ -1,6 +1,6 @@
     MoviePilot-Plugin
 
-MoviePilot 三方插件市场：https://github.com/erbukuawu/MoviePilot-Plugins/
+自用MoviePilot 三方插件市场：https://github.com/erbukuawu/MoviePilot-Plugins/
 
 ## 插件合集
 
