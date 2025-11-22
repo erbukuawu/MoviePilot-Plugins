@@ -3,7 +3,7 @@ from typing import List, Tuple, Dict, Any
 from apscheduler.triggers.interval import IntervalTrigger  # 修改1：导入IntervalTrigger
 
 from app.core.config import settings
-from app.core.event import eventmanager
+from app.core.event import eventmanager, Event  # 需要导入Event
 from app.schemas.types import EventType
 from app.utils.http import RequestUtils
 from app.log import logger
@@ -18,7 +18,7 @@ class CMSNotify(_PluginBase):
     # 插件图标
     plugin_icon = "https://raw.githubusercontent.com/imaliang/MoviePilot-Plugins/main/icons/cms.png"
     # 插件版本
-    plugin_version = "0.5"  # 修改2：版本号升级
+    plugin_version = "0.6"  # 修改版本号
     # 插件作者
     plugin_author = "imaliang"
     # 作者主页
@@ -192,6 +192,27 @@ class CMSNotify(_PluginBase):
                                         'props': {
                                             'type': 'info',
                                             'variant': 'tonal',
+                                            'text': '支持目录实时监控插件(cloudlinkmonitor)的转移完成事件'
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        'component': 'VRow',
+                        'content': [
+                            {
+                                'component': 'VCol',
+                                'props': {
+                                    'cols': 12,
+                                },
+                                'content': [
+                                    {
+                                        'component': 'VAlert',
+                                        'props': {
+                                            'type': 'info',
+                                            'variant': 'tonal',
                                             'text': '精准20秒等待机制：每10秒检查一次，满足20秒间隔即触发通知'
                                         }
                                     }
@@ -245,6 +266,36 @@ class CMSNotify(_PluginBase):
             logger.info(f"媒体刮削完成：{name}")
             self._wait_notify_count += 1
             self._last_event_time = self.__get_time()
+
+    # ========== 新增：监听cloudlinkmonitor的事件 ==========
+    @eventmanager.register(EventType.PluginAction)
+    def handle_cloudlinkmonitor_event(self, event: Event):
+        """
+        处理cloudlinkmonitor目录监控插件的CMS通知事件
+        """
+        if not self._enabled or not self._cms_domain or not self._cms_api_token:
+            return
+
+        event_data = event.event_data
+        if not event_data or event_data.get("action") != "cms_notify":
+            return
+
+        # 获取媒体信息
+        title = event_data.get("title", "未知媒体")
+        year = event_data.get("year", "")
+        media_type = event_data.get("media_type", "未知类型")
+        
+        if year:
+            name = f"{title} ({year})"
+        else:
+            name = title
+            
+        logger.info(f"cloudlinkmonitor转移完成并触发CMS通知：{name} ({media_type})")
+        
+        # 增加等待通知计数
+        self._wait_notify_count += 1
+        self._last_event_time = self.__get_time()
+    # ========== 新增代码结束 ==========
 
     def __get_time(self):
         return int(time.time())
