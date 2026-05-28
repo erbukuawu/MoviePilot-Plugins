@@ -20,7 +20,7 @@ class CMSNotify(_PluginBase):
     # 插件版本
     plugin_version = "0.6"  # 修改版本号
     # 插件作者
-    plugin_author = "imaliang"
+    plugin_author = "fromimaliang"
     # 作者主页
     author_url = "https://github.com/imaliang"
     # 插件配置项ID前缀
