@@ -5,7 +5,7 @@
     "labels": "消息通知,媒体库,STRM",
     "version": "0.6",
     "icon": "https://raw.githubusercontent.com/imaliang/MoviePilot-Plugins/main/icons/cms.png",
-    "author": "imaliang",
+    "author": "fromimaliang",
     "level": 1,
     "history": {
       "v0.6": "支持目录实时监控插件(v2.6.0)通知",
@@ -20,7 +20,7 @@
     "labels": "云盘,工具",
     "version": "2.6.0",
     "icon": "https://raw.githubusercontent.com/erbukuawu/MoviePilot-Plugins/main/icons/Linkease_A.png",
-    "author": "thsrite",
+    "author": "fromthsrite",
     "level": 1,
     "history": {
       "v2.6.0": "增加向cms通知插件发送生成strm的通知"
